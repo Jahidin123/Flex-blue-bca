@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulir Pendaftaran</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f4f8;
+    }
+
+    header {
+      background-color: #0070c9;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #0070c9;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .submit-btn {
+      background-color: #0070c9;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #005a9c;
+    }
+
+    footer {
+      background-color: #0070c9;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #0070c9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Portal Kerja</div>
+    <nav id="navMenu">
+      <a href="#">Beranda</a>
+      <a href="#">Tes Online</a>
+      <a href="#">Tentang Kami</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Formulir Pendaftaran</h2>
+    <form id="daftarForm">
+      <label for="nik">NIK</label>
+      <input type="text" id="nik" name="nik" required />
+
+      <label for="kk">No KK</label>
+      <input type="text" id="kk" name="kk" required />
+
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" name="nama" required />
+
+      <label for="tempat">Tempat Lahir</label>
+      <input type="text" id="tempat" name="tempat" required />
+
+      <label for="tanggal">Tanggal Lahir</label>
+      <input type="date" id="tanggal" name="tanggal" required />
+
+      <label for="alamat">Alamat Lengkap</label>
+      <textarea id="alamat" name="alamat" rows="3" required></textarea>
+
+      <label for="pendidikan">Pendidikan Terakhir</label>
+      <select id="pendidikan" name="pendidikan" required>
+        <option value="">Pilih</option>
+        <option>SD</option>
+        <option>SMP</option>
+        <option>SMA</option>
+        <option>SMK</option>
+        <option>D1</option>
+        <option>D2</option>
+        <option>D3</option>
+        <option>S1</option>
+        <option>S2</option>
+        <option>S3</option>
+      </select>
+
+      <label for="jurusan">Jurusan</label>
+      <select id="jurusan" name="jurusan" required>
+        <option value="">Pilih</option>
+        <option>Teknik Informatika</option>
+        <option>Elektronika Industri</option>
+        <option>Teknik Mesin</option>
+        <option>Akuntansi</option>
+        <option>Administrasi Perkantoran</option>
+        <option>Teknik Otomotif</option>
+        <option>Teknik Listrik</option>
+        <option>Teknik Bangunan</option>
+        <option>Multimedia</option>
+        <option>Farmasi</option>
+        <option>Kimia Analis</option>
+        <option>Manajemen</option>
+        <option>Pemasaran</option>
+        <option>Perhotelan</option>
+        <option>Desain Komunikasi Visual</option>
+      </select>
+
+      <label for="hp">No HP</label>
+      <input type="text" id="hp" name="hp" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="pin">PIN Tes (6 digit)</label>
+      <input type="text" id="pin" name="pin" maxlength="6" required />
+      <label for="perusahaan">Perusahaan Tujuan</label>
+      <select id="perusahaan" name="perusahaan" required>
+        <option value="">Pilih</option>
+        <option>PT Maju Sejahtera</option>
+        <option>PT Sinar Teknologi</option>
+        <option>PT Cahaya Mandiri</option>
+        <option>PT Elektronik Global</option>
+      </select>
+
+      <label for="posisi">Pekerjaan yang Diinginkan</label>
+      <select id="posisi" name="posisi" required>
+        <option value="">Pilih</option>
+        <option>Operator Produksi</option>
+        <option>Operator Assembly</option>
+        <option>QC Inspector</option>
+        <option>Teknisi Maintenance</option>
+        <option>Staff Administrasi</option>
+      </select>
+
+      <label for="gaji">Gaji yang Diharapkan</label>
+      <input type="text" id="gaji" name="gaji" placeholder="Contoh: 5000000" required />
+
+      <label for="cv">Upload CV (PDF Maks. 5 MB)</label>
+      <input type="file" id="cv" name="cv" accept=".pdf" required />
+
+      <button type="submit" class="submit-btn">Unggah & Daftar</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Portal Kerja. Semua Hak Dilindungi.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navMenu');
+      const hamburger = document.querySelector('.hamburger');
+      if (nav.classList.contains('show') &&
+          !nav.contains(event.target) &&
+          !hamburger.contains(event.target)) {
+        nav.classList.remove('show');
+      }
+    });
+
+    // Validasi CV PDF dan max 5MB
+    document.getElementById('daftarForm').addEventListener('submit', function(e) {
+      const fileInput = document.getElementById('cv');
+      const file = fileInput.files[0];
+
+      if (file) {
+        const fileSizeMB = file.size / (1024 * 1024);
+        const fileExt = file.name.split('.').pop().toLowerCase();
+
+        if (fileExt !== 'pdf') {
+          alert('File harus berformat PDF.');
+          e.preventDefault();
+          return;
+        }
+
+        if (fileSizeMB > 5) {
+          alert('Ukuran file maksimal 5 MB.');
+          e.preventDefault();
+          return;
+        }
+      } else {
+        alert('Harap unggah file CV.');
+        e.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+          </html>
