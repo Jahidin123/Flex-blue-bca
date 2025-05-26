@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beranda</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f4f8;
+    }
+
+    header {
+      background-color: #0070c9;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .jumbotron {
+      background-color: #e6f0fa;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .jumbotron h1 {
+      color: #0070c9;
+    }
+
+    .main-content {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .logo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .logo-card {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      width: calc(50% - 0.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+    }
+
+    .logo-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .lowongan {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      background-color: #0070c9;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #005a9c;
+    }
+
+    footer {
+      background-color: #0070c9;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #0070c9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .logo-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Portal Kerja</div>
+    <nav id="navMenu">
+      <a href="#">Daftar</a>
+      <a href="#">Tes Online</a>
+      <a href="#">Ubah PIN</a>
+      <a href="#">Tentang Kami</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="jumbotron">
+    <h1>Selamat Datang di Portal Kerja</h1>
+    <p>Temukan berbagai peluang kerja terbaik yang sesuai dengan minat dan keahlian Anda.</p>
+  </div>
+
+  <div class="main-content">
+    <h2>Perusahaan Rekanan</h2>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x80?text=Perusahaan+1" alt="Logo Perusahaan 1">
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x80?text=Perusahaan+2" alt="Logo Perusahaan 2">
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x80?text=Perusahaan+3" alt="Logo Perusahaan 3">
+      </div>
+      <div class="logo-card">
+        <img src="https://via.placeholder.com/200x80?text=Perusahaan+4" alt="Logo Perusahaan 4">
+      </div>
+    </div>
+
+    <h2>Lowongan Tersedia</h2>
+    <div class="lowongan">
+      <h3>Customer Service - Jakarta</h3>
+      <p>Posisi layanan pelanggan di perusahaan teknologi finansial terkemuka.</p>
+    </div>
+    <div class="lowongan">
+      <h3>Web Developer - Bandung</h3>
+      <p>Mengembangkan aplikasi web modern dengan teknologi terbaru.</p>
+    </div>
+    <div class="lowongan">
+      <h3>Sales Executive - Surabaya</h3>
+      <p>Menawarkan solusi dan produk kepada klien baru di wilayah Jawa Timur.</p>
+    </div>
+
+    <div class="cta">
+      <a href="#">Lamar Sekarang</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Portal Kerja. Semua Hak Dilindungi.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navMenu');
+      const hamburger = document.querySelector('.hamburger');
+
+      if (nav.classList.contains('show') &&
+          !nav.contains(event.target) &&
+          !hamburger.contains(event.target)) {
+        nav.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
