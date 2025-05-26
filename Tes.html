@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tes Online</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f4f8;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #0070c9;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      width: 100%;
+    }
+
+    footer {
+      background-color: #0070c9;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #0070c9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Portal Kerja</div>
+    <nav id="navMenu">
+      <a href="index.html">Beranda</a>
+      <a href="daftar.html">Daftar</a>
+      <a href="tes.html">Tes Online</a>
+      <a href="tentang.html">Tentang Kami</a>
+    </nav>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <!-- Ganti URL di bawah dengan URL embed Google Form milikmu -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSekIPwpxIz2eLxORBMBDLmPaWP5YKQ1ByBVbkML2EKdb6lJlw/viewform?embedded=true" >Memuat…</iframe><footer>
+    &copy; 2025 Portal Kerja. Semua Hak Dilindungi.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navMenu');
+      const hamburger = document.getElementById('hamburger');
+      const isClickInside = nav.contains(event.target) || hamburger.contains(event.target);
+
+      if (!isClickInside) {
+        nav.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
