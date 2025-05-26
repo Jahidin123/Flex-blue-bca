@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Kami</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f4f8;
+    }
+
+    header {
+      background-color: #0070c9;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #0070c9;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #0070c9;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #0070c9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Portal Kerja</div>
+    <nav id="navMenu">
+      <a href="index.html">Beranda</a>
+      <a href="daftar.html">Daftar</a>
+      <a href="tes.html">Tes Online</a>
+     </nav>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Tentang Kami</h2>
+    <p><strong>Portal Kerja</strong> adalah platform digital yang bertujuan menjembatani pencari kerja dengan perusahaan-perusahaan terbaik di Indonesia.</p>
+    <p>Kami bekerja sama dengan berbagai industri dari sektor manufaktur, teknologi, hingga jasa, untuk memberikan peluang kerja yang sesuai dengan minat dan keahlian para pelamar.</p>
+    <p>Portal ini menyediakan fitur pendaftaran online, unggah CV, hingga pelaksanaan tes secara daring untuk mempermudah proses rekrutmen yang cepat, transparan, dan efisien.</p>
+    <p>Dengan semangat membantu pencari kerja mencapai karir impian, kami terus berinovasi dan menjalin kolaborasi strategis dengan perusahaan-perusahaan mitra.</p>
+    <p><em>Gabung bersama kami dan raih masa depan yang cerah!</em></p>
+  </div>
+
+  <footer>
+    &copy; 2025 Portal Kerja. Semua Hak Dilindungi.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navMenu');
+      const hamburger = document.getElementById('hamburger');
+      const isClickInside = nav.contains(event.target) || hamburger.contains(event.target);
+
+      if (!isClickInside) {
+        nav.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
